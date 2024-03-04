@@ -1,0 +1,108 @@
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/indigo.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/purple.css';
+@import '@radix-ui/colors/violet.css';
+
+/* reset */
+button,
+p {
+  all: unset;
+}
+
+.NavigationMenuRoot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  background-color: #13131E;
+}
+.MenuRootImg {
+  align-self:flex-start;
+}
+
+.NavigationMenuList {
+  display:flex;
+  background: transparent;
+  padding: 4px;
+  border-radius: 6px;
+  list-style: none;
+  margin: 0;
+}
+
+.NavigationMenuLink {
+  padding: 8px 12px;
+  outline: none;
+  user-select: none;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 4px;
+  font-size: 15px;
+  color: var(--violet-8);
+}
+
+.NavigationMenuLink:focus {
+  box-shadow: 0 0 0 2px var(--violet-7);
+  background-color: var(--violet-3);
+}
+
+.NavigationMenuLink:hover {
+  background-color: var(--violet-3);
+}
+
+.NavigationMenuLink {
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.NavigationMenuViewport {
+  position: relative;
+  transform-origin: top center;
+  margin-top: 10px;
+  width: 100%;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  height: var(--radix-navigation-menu-viewport-height);
+  transition: width, height, 300ms ease;
+}
+
+.MainPageIntroduce {
+  background-color: var(--black-a0);
+  color: var(--violet-8);
+}
+
+.MainPageContent{
+  
+  display: flex;
+  justify-content: center;
+  background-color: var(--white-a11);
+  height:450px ;
+}
+
+.MainPageContentButton:hover{
+  background-color: var(--black-a12);
+}
+
+.MainPageContentButton:focus{
+  box-shadow: 0 0 0 2px var(--violet-5);
+  background-color: var(--violet-3);
+}
+.MainPageIntroducetext{
+  width: 400px;
+  margin-left: 50px;
+}
+
+.MainPageBottom{
+  background-color: gray;
+  height: 100px;
+}
+
+
+
+
