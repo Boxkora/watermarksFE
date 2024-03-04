@@ -5,6 +5,7 @@ import "@radix-ui/themes/styles.css";
 import "./App.css";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
+import '@mantine/dropzone/styles.css';
 import Layout from "./layout";
 import Index from "./Index";
 import NoMatch from "./nomatch";
