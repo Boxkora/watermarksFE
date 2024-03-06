@@ -18,17 +18,9 @@ export default function Upload(){
             <br />
             <Flex className='MainPageContent' gap="9">
                 <div className='MainPageBox'>
-                    <div className='WatermarkEmbedImageBox'>
-
-                    </div>
-                    <div className='DownloadEmbeddedImageBox'>
-
-                    </div>
-                    <div className='UploadImageBox'>
-                        <Box>
+                    <Box>
                             <BaseDemo></BaseDemo>
-                        </Box>
-                    </div>
+                    </Box>
                 </div>
             </Flex>
         </div>
