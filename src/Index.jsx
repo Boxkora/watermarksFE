@@ -1,16 +1,11 @@
 import { Flex,Card,Text,Inset,Strong,Box,Button } from '@radix-ui/themes';
 import pic from './assets/imgembed1.png';
-import pic2 from './assets/imgprove1.png';
 import {useNavigate} from "react-router-dom";
 
 export default function Index(){
     const navigate = useNavigate();
     const roundToUpload = () => {
-        let path = "/upload";
-        navigate(path);
-    }
-    const roundToDownload = () => {
-        let path = "/download";
+        let path = "/embedwatermark";
         navigate(path);
     }
     return(
@@ -46,33 +41,6 @@ export default function Index(){
                         <br />
                         <br />
                         <Button onClick={roundToUpload} className='MainPageContentButton' style={{
-                            backgroundColor: 'var(--violet-11)',
-                            marginLeft: '27%',        
-                        }}>Click me
-                        </Button>
-                    </Card>
-                </Box>
-
-                <Box>
-                    <Card size="2" style={{ maxWidth: 240,color:'var(--violet-8)' , backgroundColor: 'var(--black-a8)' }}>
-                        <Inset clip="padding-box" side="top" pb="current">
-                            <img
-                            src={pic2}
-                            alt="wrong"
-                            style={{
-                                display: 'block',
-                                objectFit: 'cover',
-                                width: 190,
-                                height: 190,
-                            }}
-                            />
-                        </Inset>
-                        <Text as="p" size="3">
-                            <Strong>Watermarks Identify</Strong> 
-                        </Text>
-                        <br />
-                        <br />
-                        <Button onClick={roundToDownload} className='MainPageContentButton' style={{
                             backgroundColor: 'var(--violet-11)',
                             marginLeft: '27%',        
                         }}>Click me

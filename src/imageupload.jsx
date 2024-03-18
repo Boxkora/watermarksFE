@@ -1,19 +1,23 @@
-import { Group, Text, rem , Image, SimpleGrid, Button, TextInput, Center } from '@mantine/core';
+import { Group, Text, rem , Image, SimpleGrid, TextInput, Center } from '@mantine/core';
 import { Dropzone, IMAGE_MIME_TYPE } from '@mantine/dropzone';
 import { IconUpload, IconPhoto, IconX } from '@tabler/icons-react';
 import { useState } from 'react';
 import { fabric } from 'fabric';
+import { Flex,Card,Inset,Strong,Box,Button} from '@radix-ui/themes';
 
-export default function BaseDemo() {
+export default function Basedemo() {
     const [files, setFiles] = useState([]);
     const [originalFiles, setOriginalFiles] = useState([]);
     const [watermarkText, setWatermarkText] = useState('');
     const previews = files.map((file, index) => {
         const imageUrl = URL.createObjectURL(file);
         return (
-            <div key={index}>
+            <div key={index} className='ImagePreview'>
+            
                 <Image src={imageUrl} onLoad={() => URL.revokeObjectURL(imageUrl)} />
+                <br />
                 <Button onClick={() => downloadImage(index)}>Download Image</Button>
+                
             </div>
         );
     });

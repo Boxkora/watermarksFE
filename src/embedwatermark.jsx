@@ -1,14 +1,14 @@
 import { Flex,Card,Text,Inset,Strong,Box,Button } from '@radix-ui/themes';
+import Basedemo from './imageupload';
 
-
-export default function Download(){
+export default function EmbedWatermark(){
 
     return(
         <>
             <div style={{backgroundColor: 'var(--black-a11)',height:'700px' }}>
                 <div className='MainPageIntroduce'>
                     <Flex gap="5">
-                        <Box className='MainPageIntroducetext'><h1>Watermark Identify,</h1><p>Space Station will help you, verify everyone image ownership by checking wether watermarks applied to the image or not .</p>
+                        <Box className='MainPageIntroducetext'><h1>Watermark Embed,</h1><p>Space Station will help you protect your ownership by provide you a tool to embed your own Watermark into the image.</p>
                         </Box>
                         
                     </Flex>
@@ -17,7 +17,11 @@ export default function Download(){
             <br />
             <br />
             <Flex className='MainPageContent' gap="9">
-            
+                <div className='MainPageBox'>
+                    <Box>
+                            <Basedemo></Basedemo>
+                    </Box>
+                </div>
             </Flex>
         </div>
             <div className='MainPageBottom'>
