@@ -103,4 +103,18 @@ p {
   height: 100px;
 }
 
+.ImagePreview{
+  width: 300px;
+  height: 300px;
+}
+
+.Gridview{
+  position: absolute;
+  left: 500px;
+  top: 300px;
+}
+
+.buttonView{
+  position: absolute;
+}
 

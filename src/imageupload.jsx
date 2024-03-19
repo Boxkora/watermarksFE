@@ -10,13 +10,13 @@ export default function Basedemo() {
     const [originalFiles, setOriginalFiles] = useState([]);
     const [watermarkText, setWatermarkText] = useState('');
     const previews = files.map((file, index) => {
-        const imageUrl = URL.createObjectURL(file);
+    const imageUrl = URL.createObjectURL(file);
         return (
             <div key={index} className='ImagePreview'>
             
                 <Image src={imageUrl} onLoad={() => URL.revokeObjectURL(imageUrl)} />
                 <br />
-                <Button onClick={() => downloadImage(index)}>Download Image</Button>
+                <Button  onClick={() => downloadImage(index)}>Download Image</Button>
                 
             </div>
         );
@@ -35,7 +35,7 @@ export default function Basedemo() {
     
             for (let i = 0; i < numX; i++) {
                 for (let j = 0; j < numY; j++) {
-                    const text = new fabric.Text(watermarkText, { left: i * 200, top: j * 200, fill: '#fff', opacity: 0.01 });
+                    const text = new fabric.Text(watermarkText, { left: i * 200, top: j * 200, fill: '#fff', opacity: 0.004 });
                     canvas.add(text);
                 }
             }
@@ -86,15 +86,16 @@ export default function Basedemo() {
 
             </div>
             <br />
-            <Dropzone
-                onDrop={(acceptedFiles) => {
-                    setFiles(acceptedFiles);
-                    setOriginalFiles(acceptedFiles);
-                }}
-                onReject={(files) => console.log('rejected files', files)}
-                maxSize={5 * 1024 ** 2}
-                accept={IMAGE_MIME_TYPE}
-            >
+            {previews.length === 0 ? (
+                <Dropzone
+                    onDrop={(acceptedFiles) => {
+                        setFiles(acceptedFiles);
+                        setOriginalFiles(acceptedFiles);
+                    }}
+                    onReject={(files) => console.log('rejected files', files)}
+                    maxSize={5 * 1024 ** 2}
+                    accept={IMAGE_MIME_TYPE}
+                >
                 <Group justify="center" gap="xl" mih={220} style={{ pointerEvents: 'none' }}>
                     <Dropzone.Accept>
                         <IconUpload
@@ -125,10 +126,12 @@ export default function Basedemo() {
                         </Text>
                     </div>
                 </Group>
-            </Dropzone>
-            <SimpleGrid cols={{ base: 1, sm: 4 }} mt={previews.length > 0 ? 'xl' : 0}>
-                {previews}
-            </SimpleGrid>
+                </Dropzone>
+            ) : (
+                <SimpleGrid className='Gridview' cols={{ base: 1, sm: 4 }} mt={previews.length > 0 ? 'xl' : 0}>
+                    {previews}
+                </SimpleGrid>
+            )}
         </div>
     );
 }
